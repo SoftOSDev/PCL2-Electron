@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL II ELE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(to bottom, #e6f3ff, #f5faff);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #0078d7;
+            color: white;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #005a9e;
+            font-size: 16px;
+            -webkit-app-region: drag;
+        }
+
+        .header-title {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .neo-box {
+            background-color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .neo-text {
+            font-size: 11px;
+            background: #0078d7;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-button {
+            background-color: #0078d7;
+            border: none;
+            padding: 4px;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            -webkit-app-region: no-drag;
+        }
+
+        .action-button:hover {
+            background-color: #005a9e;
+        }
+
+        .button {
+            background-color: #0078d7;
+            border: none;
+            color: white;
+            padding: 5px 15px;
+            cursor: pointer;
+            border-radius: 37px;
+            font-size: 12px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            -webkit-app-region: no-drag;
+        }
+
+        .button:hover {
+            background-color: #005a9e;
+        }
+
+        .content {
+            background:#e6f3ff;
+            display: flex;
+        }
+	#isit {
+            background-color: white;
+            color:#0078d7 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">
+            PCL II 
+            <div class="neo-box">
+                <span class="neo-text">ELE</span>
+            </div>
+        </div>
+        <div class="header-buttons">
+            <button class="button" onclick="r1()" id="isit">启动</button>
+            <button class="button" onclick="r2()">下载</button>
+            <button class="button" onclick="r3()">设置</button>
+            <button class="button" onclick="r4()">更多</button>
+        </div>
+        <div class="header-actions">
+            <button class="action-button" id="min">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="5" width="12" height="2" rx="1"/>
+                </svg>
+            </button>
+            <button class="action-button" id="close">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L11 11M11 1L1 11" stroke="white" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="content" style="height: 97%">
+        <!-- 内容区域为空，与图片一致 -->
+         <iframe frameborder="0" src="st.html" height="99%" width="100%"></iframe>
+    </div>
+<script src="m.js"></script>
+<script src="../index.js"></script>
+<script src="../renderer.js"></script>
+</body>
+</html>

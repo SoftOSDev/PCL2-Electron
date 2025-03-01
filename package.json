@@ -1,0 +1,24 @@
+{
+  "name": "pcl2",
+  "version": "0.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "packager": "electron-packager ./ pcl_ele --platform=win32 --out=release --arch=x64 --overwrite --ignore=node_modules --asar --icon=./pcl-ele.ico --electron-version=34.3.0",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^20.7.0",
+    "node-cmd": "^5.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.7.0",
+    "electron": "^34.3.0",
+    "electron-packager": "^17.1.2"
+  }
+}

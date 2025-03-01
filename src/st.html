@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif; /* 默认字体，需替换为Minecraft字体 */
+            background: #FFF; /* 去掉渐变背景，使用纯白色 */
+        }
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+            height: 100vh; /* 填充整个视口高度 */
+            background: #FFF; /* 容器背景白色 */
+            border-radius: 0; /* 去掉圆角 */
+            box-shadow: none; /* 去掉阴影 */
+        }
+
+        .left-column, .right-column {
+            padding: 20px;
+        }
+
+        .left-column {
+            width: 35%; /* 左边栏占40%（2/5） */
+            border-right: 2px solid #ccc; /* 分隔线 */
+            text-align: center;display: grid;
+            place-items: center;
+        }
+
+        .right-column {
+            width: 65%; /* 右边栏占60%（3/5） */
+            background: #e6f3ff; /* 整个右边栏背景改为浅蓝色 */
+        }
+
+        .profile-container {
+            flex: 1; /* 占满剩余空间 */
+            display: flex;
+            align-items: center; /* 垂直居中Profile图片 */
+            justify-content: center; /* 水平居中Profile图片 */
+        }
+
+        .mojang-logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .minecraft-logo {
+            display: none; /* 隐藏原来的Minecraft文字，因为图片中没有 */
+        }
+
+        .profile-icon {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        .login-content {
+            width: 100%; /* 确保内容宽度填满 */
+            text-align: center; /* 水平居中 */
+        }
+
+        .login-select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #0078D7; /* 蓝色边框，与图片一致 */
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: 'Minecraft', Arial, sans-serif; /* 需下载Minecraft字体 */
+            background: #FFF;
+            color: #000;
+        }
+
+        .login-input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #000000; /* 蓝色边框，与图片一致 */
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: 'Minecraft', Arial, sans-serif; /* 需下载Minecraft字体 */
+            background: #FFF;
+            color: #000;
+        }
+
+        .launch-button {
+            width: 100%;
+            padding: 14px;
+            background-color: #ffffff; /* 蓝色按钮，与图片一致 */
+            color: #0078D7;
+            border: 1px solid #0078D7;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-family: 'Minecraft', Arial, sans-serif; /* 需下载Minecraft字体 */
+        }
+
+        .launch-button:hover {
+            background-color: #cde4f5; /* 悬停时稍深蓝色 */
+            border: 1px solid #0078D7;
+        }
+
+        .bottom-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .bottom-button {
+            padding: 8px 13%;
+            background-color: #FFF;
+            color: #000000; /* 蓝色文字，与图片一致 */
+            border: 1px solid #000000;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Minecraft', Arial, sans-serif; /* 需下载Minecraft字体 */
+        }
+
+        .bottom-button:hover {
+            background-color: #dadada; /* 悬停时浅蓝色背景 */
+        }
+
+        .announcement {
+            background: #FFF; /* 公告区域背景保持白色 */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+            font-family: 'Minecraft', Arial, sans-serif; /* 需下载Minecraft字体 */
+        }
+
+        .announcement-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+        }
+	#isit {
+            background-color: #0078d7;
+            color:white ;
+            border: none;
+            padding: 5px 15px;
+            cursor: pointer;
+            border-radius: 37px;
+            font-size: 12px;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left-column">
+            
+                <button id="isit">离线</button>
+            <div class="profile-container">
+                <img src="steven.webp" alt="Profile Icon" class="profile-icon">
+            </div>
+            <div class="login-content">
+                <input type="text" class="login-input" placeholder="用户名">
+                <br><br><br>
+                <button class="launch-button">启动游戏</button>
+                <div class="bottom-buttons">
+                    <button class="bottom-button">版本选择</button>
+                    <button class="bottom-button">版本设置</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="announcement">
+                <div class="announcement-title">提示</div>
+                <p>此版本为PCL2-ELE启动器的内测版。PCL2-ELE依然处于内测中，目前只有UI，此版本的质量也并不代表发布时的最终质量</p>
+                <p>目前版本为：Beta 0.0.3</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
